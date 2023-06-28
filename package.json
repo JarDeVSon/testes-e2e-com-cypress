@@ -1,0 +1,16 @@
+{
+  "name": "testes-e2e-com-cypress",
+  "version": "1.0.0",
+  "description": "TBD.",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jardeson Santos <jardounifanor@gmail.com> ",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.15.0",
+    "eslint": "^8.43.0"
+  }
+}
