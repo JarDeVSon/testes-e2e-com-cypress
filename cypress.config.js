@@ -1,9 +1,12 @@
+/* eslint-disable linebreak-style */
 const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
   e2e: {
     baseUrl: 'https://notes-serverless-app.com',
-    defaultCommandTimeout: 10000,
+    pageLoadTimeout: 40000,
+    defaultCommandTimeout: 40000,
+    defaultBrowser: 'chrome',
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
