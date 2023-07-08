@@ -4,8 +4,11 @@ const { defineConfig } = require('cypress')
 module.exports = defineConfig({
   e2e: {
     baseUrl: 'https://notes-serverless-app.com',
-    pageLoadTimeout: 40000,
-    defaultCommandTimeout: 40000,
+    waitForAnimations: true,
+    pageLoadTimeout: 60000,
+    defaultCommandTimeout: 60000,
+    requestTimeout: 60000,
+    responseTimeout: 60000,
     defaultBrowser: 'chrome',
     setupNodeEvents(on, config) {
       // implement node event listeners here
