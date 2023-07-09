@@ -5,7 +5,6 @@ describe('Scenarios where authentication is a pre-condition', () => {
     cy.intercept('GET', '**/notes').as('getNotes')
     cy.sessionLogin()
   })
-
   it('CRUDs a note', () => {
     const noteDescription = faker.lorem.words(4)
 
@@ -21,7 +20,6 @@ describe('Scenarios where authentication is a pre-condition', () => {
     cy.deleteNote(updatedNoteDescription)
     cy.wait('@getNotes')
   })
-
   it('successfully submits the settings form', () => {
     cy.intercept('POST', '**/prod/billing').as('paymentRequest')
 
@@ -30,7 +28,6 @@ describe('Scenarios where authentication is a pre-condition', () => {
     cy.wait('@getNotes')
     cy.wait('@paymentRequest').its('state').should('be.equal', 'Complete')
   })
-  
   it('logs out', () => {
     cy.visit('/')
     cy.wait('@getNotes')
