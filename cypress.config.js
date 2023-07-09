@@ -3,6 +3,7 @@ const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
   chromeWebSecurity: false,
+  projectId: 'o675g1',
   e2e: {
     baseUrl: 'https://notes-serverless-app.com',
     waitForAnimations: true,
@@ -11,11 +12,12 @@ module.exports = defineConfig({
     requestTimeout: 60000,
     responseTimeout: 60000,
     defaultBrowser: 'chrome',
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
+    env: {
+      viewportWidthBreakpoint: 768,
     },
-  },
-  env: {
-    viewportWidthBreakpoint: 768,
-  },
+    setupNodeEvents(on, config) {
+      require('@cypress/grep/src/plugin')(config)
+      return config
+    },
+  }
 })
